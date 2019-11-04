@@ -35,9 +35,9 @@ Also, https://github.com/http-party/http-server for serving the content
 */
 const destination_urls =
 {
-    GetAppList: "https://api.example.com/GetAppList", // https://api.steampowered.com/ISteamApps/GetAppList/v2/ (Could be outdated)
-    GetNumberOfCurrentPlayers: "https://api.example.com/GetNumberOfCurrentPlayers", // https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/ (Could be outdated)
-    Origin: "https://example.com" // Origin domain name
+    GetAppList: "https://cors-anywhere.herokuapp.com/https://api.steampowered.com/ISteamApps/GetAppList/v2/", // https://api.steampowered.com/ISteamApps/GetAppList/v2/ (Could be outdated)
+    GetNumberOfCurrentPlayers: "https://cors-anywhere.herokuapp.com/https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/", // https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/ (Could be outdated)
+    Origin: "https://elandig.github.io" // Origin domain name
 }
 
 const rate_limit_interval = 4000 // Rate limit interval (ms)
