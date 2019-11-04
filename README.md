@@ -1,5 +1,5 @@
 # Steam Apps Current Online
-Simple React.js example that shows current Steam apps online
+Simple React.js example that shows current Steam apps player online
 
 # Demo
 Will be available soon!
