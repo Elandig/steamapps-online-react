@@ -95,7 +95,6 @@ class Gamelist extends React.Component
                 // Loop with rate limit interval
                 let i = 0;
                 _data.forEach(el => {
-                    i += 1;
                     setTimeout(() => {
                         // Fetch data from the API
                         this.fetchData(el.appid).then(appdata => {
@@ -105,6 +104,7 @@ class Gamelist extends React.Component
                     },
                     i * rate_limit_interval
                     )
+                    i += 1;
                 });
             }).catch(err => console.error(err));
     }
@@ -163,7 +163,7 @@ class Header extends React.Component
                 <span className="navbar-text text-secondary justify-content-end">
                     This website is not affiliated with Valve Corporation.
                 </span>
-                <div className="alert alert-warning"><strong>Note:</strong> It might take a while to load current online players (1 request, each 10 seconds)</div>
+                <div className="alert alert-info"><strong>Note:</strong> It might take a while to load current online players (1 request, each 10 seconds)</div>
             </nav>
         );
     }
