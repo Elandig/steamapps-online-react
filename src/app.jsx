@@ -103,7 +103,7 @@ class Gamelist extends React.Component
                         }).catch(err => console.error(err));
                     },
                     i * rate_limit_interval
-                    )
+                    );
                     i += 1;
                 });
             }).catch(err => console.error(err));
