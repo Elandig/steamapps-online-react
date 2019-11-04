@@ -25,3 +25,7 @@
     background-color: #475058;
     color: white;
 }
+
+ul {
+ padding-inline-start: 0 !important;   
+}
