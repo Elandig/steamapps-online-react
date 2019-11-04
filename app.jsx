@@ -44,7 +44,7 @@ const rate_limit_interval = 4000 // Rate limit interval (ms)
 
 /*
 Limit amount of the shown apps.
-Enter undefined to disable the limit (Not recommended.)
+Use undefined to remove the limit (Not recommended.)
 
 OR you can set your own query string to limit the amount of the shown apps server-side
 i.e: https://api.example.com/GetAppList?amount=1000
