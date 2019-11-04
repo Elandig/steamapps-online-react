@@ -40,7 +40,7 @@ const destination_urls =
     Origin: "https://elandig.github.io" // Origin domain name
 }
 
-const rate_limit_interval = 4000 // Rate limit interval (ms)
+const rate_limit_interval = 10000 // Rate limit interval (ms)
 
 /*
 Limit amount of the shown apps.
@@ -49,7 +49,7 @@ Use undefined to remove the limit (Not recommended.)
 OR you can set your own query string to limit the amount of the shown apps server-side
 i.e: https://api.example.com/GetAppList?amount=1000
 */
-const game_list_limit = 1000
+const game_list_limit = 20
 
 class Gamelist extends React.Component
 {
@@ -163,6 +163,7 @@ class Header extends React.Component
                 <span className="navbar-text text-secondary justify-content-end">
                     This website is not affiliated with Valve Corporation.
                 </span>
+                <div className="alert alert-warning"><strong>Note:</strong> It might take a while to load current online players (1 request, each 10 seconds)</div>
             </nav>
         );
     }
