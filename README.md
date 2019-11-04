@@ -13,7 +13,7 @@ i.e:
 1. ```https://cors-anywhere.herokuapp.com/https://api.steampowered.com/ISteamApps/GetAppList/v2/```
 2. ```https://cors-anywhere.herokuapp.com/https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/```
 
-* To change API destination, go to [app.jsx(Line 36)](https://github.com/Elandig/steamapps-online-react/blob/master/app.jsx#L36)
+* To change API destination, go to [src/app.jsx(Line 36)](https://github.com/Elandig/steamapps-online-react/blob/master/src/app.jsx#L36)
 ```js
 const destination_urls =
 {
@@ -23,12 +23,12 @@ const destination_urls =
 }
 ```
 
-* To change the rate limit interval, go to [app.jsx(Line 43)](https://github.com/Elandig/steamapps-online-react/blob/master/app.jsx#L43)
+* To change the rate limit interval, go to [src/app.jsx(Line 43)](https://github.com/Elandig/steamapps-online-react/blob/master/src/app.jsx#L43)
 ```js
 const rate_limit_interval = 4000 // Rate limit interval (ms)
 ```
 
-* To reduce amount of the shown apps, change the value at [app.jsx(Line 52)](https://github.com/Elandig/steamapps-online-react/blob/master/app.jsx#L52)
+* To reduce amount of the shown apps, change the value at [src/app.jsx(Line 52)](https://github.com/Elandig/steamapps-online-react/blob/master/src/app.jsx#L52)
 ```js
 /*
 Limit amount of the shown apps.
