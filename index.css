@@ -1,0 +1,27 @@
+.container {
+    min-width: 20em;
+}
+
+.loader {
+    width: 12.5%;
+    margin: auto;
+    padding-top: 12.5%;
+}
+
+.gamelist {
+    background-color: #191c1f;
+}
+
+.gamelist-obj-title {
+    max-width: 33%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.gamelist-obj-online {
+    float: right;
+    background-color: #475058;
+    color: white;
+}
