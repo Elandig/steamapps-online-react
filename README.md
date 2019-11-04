@@ -1,4 +1,4 @@
-# Steam Apps Current Online
+# Steam Apps Current Player Online
 Simple React.js example that shows current Steam apps player online
 
 # Demo
