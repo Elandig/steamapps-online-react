@@ -163,7 +163,7 @@ class Header extends React.Component
                 <span className="navbar-text text-secondary justify-content-end">
                     This website is not affiliated with Valve Corporation.
                 </span>
-                <div className="alert alert-info"><strong>Note:</strong> It might take a while to load current online players (1 request, each 10 seconds)</div>
+                <div className="alert alert-info"><strong>Note:</strong> It might take a while to load current player online for each app (1 request each 10 seconds.)</div>
             </nav>
         );
     }
