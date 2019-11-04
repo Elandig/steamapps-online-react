@@ -2,7 +2,7 @@
 Simple React.js example that shows current Steam apps player online
 
 # Demo
-Will be available soon!
+[Github-pages demo](https://elandig.github.io/steamapps-online-react/)
 
 # Usage
 
