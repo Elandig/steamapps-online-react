@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2019 Elan
+Copyright (c) 2019 Elandig
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,12 +26,12 @@ SOFTWARE.
 /*
 Destination URLs for your API
 
-For development/testing you can try https://github.com/Rob--W/cors-anywhere to avoid CORS policy
+For development/testing you can try https://github.com/Rob--W/cors-anywhere to get around the CORS policy
 i.e:
 - https://cors-anywhere.herokuapp.com/https://api.steampowered.com/ISteamApps/GetAppList/v2/
 - https://cors-anywhere.herokuapp.com/https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/
 
-Also, https://github.com/http-party/http-server for serving the content
+Also, https://github.com/http-party/http-server to serve the content
 */
 const destination_urls =
 {
@@ -40,7 +40,7 @@ const destination_urls =
     Origin: "https://example.com" // Origin domain name
 }
 
-const rate_limit_interval = 4000 // Rate limit interval (ms)
+const rate_limit_interval = 4 * 1000 // Rate limit interval (ms)
 
 /*
 Limit amount of the shown apps.
@@ -77,7 +77,6 @@ class Gamelist extends React.Component
         })
     }
 
-    // Comparator for sorting apps by their appid value
     comparator(a, b)
     {
         if (a.appid < b.appid) return -1;
@@ -89,14 +88,11 @@ class Gamelist extends React.Component
     {
         fetch(destination_urls.GetAppList).then(res => res.json())
             .then(data => {
-                const _data = data.applist.apps.sort(this.comparator) // Sort by appid value using comparator
+                const _data = data.applist.apps.sort(this.comparator)
                 .slice(0, game_list_limit); // Limit amount of shown apps
                 this.setState({ data: _data });
-                // Loop with rate limit interval
-                let i = 0;
-                _data.forEach(el => {
+                _data.forEach((el, i) => {
                     setTimeout(() => {
-                        // Fetch data from the API
                         this.fetchData(el.appid).then(appdata => {
                             el.online = appdata;
                             this.setState({ data: _data });
@@ -104,12 +100,11 @@ class Gamelist extends React.Component
                     },
                     i * rate_limit_interval
                     );
-                    i += 1;
                 });
             }).catch(err => console.error(err));
     }
 
-    // Format string for current online label
+    // Current online formatting
     processString(online)
     {
         if (!online) {return ""}
@@ -135,7 +130,6 @@ class Gamelist extends React.Component
 
     render()
     {
-        // App list objects rendering
         const appList = this.state.data.map((obj) =>
             <li className="gamelist list-group-item" key={obj.appid}>
                 <div className="gamelist-obj-title">{obj.name}</div>
@@ -181,5 +175,4 @@ class App extends React.Component
     }
 }
 
-// Render the result
 ReactDOM.render(<App />, document.getElementById('root'));
